@@ -3,7 +3,7 @@ import { useField } from 'formik';
 
 interface ISelectInput {
     name: string;
-    onChange?: (value: string) => void;
+    onChange?: (value: number) => void;
 }
 
 const options = [
@@ -23,7 +23,7 @@ const options = [
 
 const SelectInput: React.FC<ISelectInput> = ({name, onChange}) => {
     const [field, meta, helpers] = useField(name);
-    
+
     useEffect(() => {
         if (!field.value) {
             helpers.setValue(options[0].value);
